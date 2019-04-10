@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es6", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx":"react",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "experimentalDecorators": true
+  },
+  "exclude": [
+    "node_modules",
+    "dist",
+  ]
+}
