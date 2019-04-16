@@ -19,6 +19,18 @@ module.exports = (env, {mode}) => {
           "test": /\.s(c|a)ss$/,
           "exclude": /node_modules/,
           "use": ["style-loader", "css-loader", "postcss-loader", "sass-loader"]
+        },
+        {
+        "test": /\.(png|jpg|gif)$/,
+        "exclude": /node_modules/,
+        "use": [
+            {
+              "loader": 'file-loader',
+              "options": {
+                 "name": './imgs/[name].[ext]'
+              },
+            },
+          ]
         }
       ]
     },
