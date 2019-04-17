@@ -1,9 +1,10 @@
 import * as React from 'react'
 import hooks from './hooks/hooks'
+import '../scss/main.scss'
  const App = ({x}) => {
 	let [ getText, setText ]:any = hooks('ahmed', []);
 	return (
-		<form>
+		<form className="form-1">
 			<h2>{getText}</h2>
 			{x && <p>this is true</p>}
 			<input type="text" value={getText} onChange={(e) => {
@@ -13,8 +14,4 @@ import hooks from './hooks/hooks'
 	)
 }
 
-export default React.memo(App, (pre, next) => {
-	console.log("pre",pre)
-	console.log("next",next)
-	return true;
-});
+export default React.memo(App);
