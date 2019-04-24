@@ -2,11 +2,11 @@
   "short_name": "messenger",
   "name": "messenger-Template",
   "icons": [
-  	 {
-      "src": "./icon-192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    }
+  	//  {
+    //   "src": "",
+    //   "type": "image/png",
+    //   "sizes": "192x192"
+    // }
   ],
   "start_url": "/",
   "display": "standalone",

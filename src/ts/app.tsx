@@ -1,7 +1,8 @@
 import * as React from 'react'
 import hooks from './hooks/hooks'
 import '../scss/main.scss'
- const App = ({x}) => {
+
+const App = ({x}) => {
 	let [ getText, setText ]:any = hooks('ahmed', []);
 	return (
 		<form className="form-1">
