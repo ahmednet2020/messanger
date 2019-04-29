@@ -1,10 +1,20 @@
-$bg:red;
-
-body
+@import './framework/bootstrap-grid';
+@import './components/Setting',
+		'./components/RoomActiveHead';
+@import './layout/RoomActive';
+*,
+*::after,
+*::before
 {
-	background-color: $bg;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
-.form-1
+.pr-0
 {
-	background-color: #f0f;
+	padding-right: 0;
+}
+.pl-0
+{
+	padding-left: 0;
 }

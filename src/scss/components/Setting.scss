@@ -1,0 +1,34 @@
+$icon-color: #0084ff;
+.setting
+{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, .10);
+    padding: 10px;
+    height: 50px;
+	h1
+	{
+		font-size: 20px;
+	}
+}
+.setting-icon
+{
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    overflow: hidden;
+    font-size: 28px;
+    color: $icon-color;
+    cursor: pointer;
+}
+.new-message
+{
+    height: 32px;
+    min-width: 32px;
+    width: 32px;
+    overflow: hidden;
+    font-size: 28px;
+    color: $icon-color;
+    cursor: pointer;
+}
