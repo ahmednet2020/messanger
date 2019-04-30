@@ -6,10 +6,10 @@ const App = () => {
 	return (
 		<main className="container-fluid">
 			<div className="row">
-				<section className="col-12 col-md-6 col-lg-8 pr-0">
+				<section className="col-12 col-md-8 col-lg-9 pr-0">
 					<RoomActive/>
 				</section>
-				<section className="col-12 col-md-6 col-lg-4 pl-0">
+				<section className="col-12 col-md-4 col-lg-3 pl-0">
 					<RoomList/>
 				</section>
 			</div>

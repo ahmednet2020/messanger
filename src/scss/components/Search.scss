@@ -1,0 +1,36 @@
+.search
+{
+	padding: 15px 10px;
+	width: 100%;
+}
+label
+{
+	position: relative;
+}
+.label-icon
+{
+	position: absolute;
+    left: 5px;
+    font-size: 13px;
+    top: 2px;
+    color: #757575;
+}
+.search-input
+{
+	background-color: #f5f6f7;
+    border-radius: 5px;
+    border-style: none;
+    width: 100%;
+    padding: 0 14px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    text-indent: 10px;
+    box-shadow: 0px 1px 2px 0px #bbbaba;
+    &:focus
+    {
+    	border:0;
+    	outline: 0;
+    };
+}
