@@ -1,19 +1,39 @@
 import * as React from 'react'
-
+import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import hash from './hooks/hash'
 import RoomList from './layout/RoomList'
 import RoomActive from './layout/RoomActive'
-const App = () => {
+const Main = (props) => {
+	const hashId = props.location.hash.replace("#", "") || "1";
+	const  [ getHash ] = hash(hashId, [hashId]);
 	return (
 		<main className="container-fluid">
 			<div className="row">
 				<section className="col-12 col-md-8 col-lg-9 pr-0">
-					<RoomActive/>
+					<RoomActive getHash={getHash}/>
 				</section>
 				<section className="col-12 col-md-4 col-lg-3 pl-0">
-					<RoomList/>
+					<RoomList getHash={getHash}/>
 				</section>
 			</div>
 		</main>
+	)
+}
+const page404 = () => {
+	return (
+		<div>
+			404
+		</div>
+	)
+}
+const App = () => {
+	return (
+		<Router>
+			<Switch>
+				<Route exact path="/" component={Main} />
+				<Route component={page404} />
+			</Switch>		
+		</Router>
 	)
 }
 

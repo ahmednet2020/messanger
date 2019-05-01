@@ -4,7 +4,7 @@ const ChatRoom = () => {
 	return (
 		<div className="ChatRoom">
 			<h2>
-				room
+				message
 			</h2>
 		</div>
 	)

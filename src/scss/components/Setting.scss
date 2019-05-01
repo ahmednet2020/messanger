@@ -48,10 +48,6 @@ $icon-color: #0084ff;
     transition: transform 0.3s ease-in-out;
     transform-origin: top;
     transform: scale(1,0);
-    ul
-    {
-        list-style:none;
-    }
     &.active
     {
         transform: scale(1,1);

@@ -1,6 +1,8 @@
 import * as React from 'react'
 
-const RoomActiveHead = () => {
+import {roomsList} from '../data';
+
+const RoomActiveHead = ({getHash}) => {
 	return (
 		<div className="RoomActiveHead">
 			<ul>
@@ -27,7 +29,7 @@ const RoomActiveHead = () => {
 				</li>
 			</ul>
 			<h2>
-				room name
+				{roomsList.filter(room => room.id === getHash)[0].roomName}
 			</h2>
 		</div>
 	)

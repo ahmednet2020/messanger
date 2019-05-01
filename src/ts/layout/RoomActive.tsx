@@ -3,12 +3,12 @@ import * as React from 'react'
 import ChatRoom from '../components/ChatRoom'
 import RoomSetting from '../components/RoomSetting'
 import RoomActiveHead from '../components/RoomActiveHead'
-const RoomActive = () => {
+const RoomActive = ({getHash}) => {
 	return (
 		<div className="RoomActive">
 			<div className="row">
 				<div className="col-12">
-					<RoomActiveHead/>
+					<RoomActiveHead getHash={getHash}/>
 				</div>
 			</div>
 			<div className="row">

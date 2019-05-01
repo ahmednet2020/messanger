@@ -1,7 +1,8 @@
 @import './framework/bootstrap-grid';
 @import './components/Setting',
 		'./components/RoomActiveHead',
-		'./components/Search';
+		'./components/Search',
+		'./components/Room';
 @import './layout/RoomActive';
 *,
 *::after,
@@ -18,4 +19,19 @@
 .pl-0
 {
 	padding-left: 0;
+}
+li
+{
+	list-style: none;
+}
+abbr
+{
+	border-bottom: none;
+    text-decoration: none;
+}
+a
+{
+	border-bottom: none;
+    text-decoration: none;
+	color:inherit;
 }
