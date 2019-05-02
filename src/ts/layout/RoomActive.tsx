@@ -12,10 +12,10 @@ const RoomActive = ({getHash}) => {
 				</div>
 			</div>
 			<div className="row">
-				<div className="col-12 col-md-4 col-lg-6">
+				<div className="col-12 col-md-4 col-lg-4">
 					<RoomSetting/>
 				</div>
-				<div className="col-12 col-md-8 col-lg-6">
+				<div className="col-12 col-md-8 col-lg-8">
 					<ChatRoom/>
 				</div>
 			</div>

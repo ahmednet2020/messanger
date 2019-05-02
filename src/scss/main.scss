@@ -2,7 +2,8 @@
 @import './components/Setting',
 		'./components/RoomActiveHead',
 		'./components/Search',
-		'./components/Room';
+		'./components/Room',
+		'./components/ChatRoom';
 @import './layout/RoomActive';
 *,
 *::after,
@@ -35,3 +36,8 @@ a
     text-decoration: none;
 	color:inherit;
 }
+input:focus
+{
+	border:0;
+	outline: 0;
+};
