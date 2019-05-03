@@ -8,15 +8,13 @@ const Main = (props) => {
 	const  [ getHash ] = hash(hashId, [hashId]);
 	return (
 		<main className="container-fluid">
-			<div className="container">
-				<div className="row">
-					<section className="col-12 col-md-8 col-lg-9">
-							<RoomActive getHash={getHash}/>
-					</section>
-					<section className="col-12 col-md-4 col-lg-3">
-							<RoomList getHash={getHash}/>
-					</section>
-				</div>
+			<div className="row">
+				<section className="col-12 col-md-8 col-lg-9">
+						<RoomActive getHash={getHash}/>
+				</section>
+				<section className="col-12 col-md-4 col-lg-3">
+						<RoomList getHash={getHash}/>
+				</section>
 			</div>
 		</main>
 	)

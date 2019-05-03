@@ -1,0 +1,58 @@
+.setting-list
+{
+	padding: 10px 0;
+	font-size: 18px;
+    text-transform: capitalize;
+    overflow: hidden;
+    .setting-icon
+    {
+    	font-size: inherit;
+    	margin: 0 10px 0 0;
+   		height: auto;
+   		width: auto;
+    }
+    &.close
+    {
+    	.arows
+    	{
+	    	transform: rotate(-90deg);
+    	}
+    	.setting-manu
+    	{
+			transform: scale(1,0);
+    	}
+    }
+}
+.arows
+{
+	transform: rotate(0);
+	transition: transform 0.3s ease-in-out;
+}
+.setting-btn
+{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: #ccc;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    cursor: pointer;
+    &:hover
+    {
+		background-color: #cccccc36;
+    }
+}
+.li-setting
+{
+	padding: 10px;
+    display: flex;
+    align-items: center;
+}
+.setting-manu
+{
+	transform: scale(1,1);
+    transition: transform 0.3s ease-in-out;
+    transform-origin: top;
+}
