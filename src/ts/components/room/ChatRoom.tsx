@@ -1,5 +1,7 @@
 import * as React from 'react'
-import Textbox from './Textbox'
+import Textbox from './layout/Textbox'
+//
+import './ChatRoom.scss'
 const ChatRoom = () => {
 	return (
 		<div className="ChatRoom">

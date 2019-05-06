@@ -1,4 +1,6 @@
 import * as React from 'react'
+
+import './RoomSetting.scss';
 const RoomSetting = () => {
 	return (
 		<div>

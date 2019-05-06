@@ -1,8 +1,12 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
+import getchat from '../../actions/Chat'
 
-import {roomsList} from '../data';
-
-const RoomActiveHead = ({getHash}) => {
+import './RoomActiveHead.scss'
+const RoomActiveHead = ({getHash, getchat, chat}) => {
+	React.useEffect(() => {
+		if(getHash) return getchat(getHash);
+	},[getHash])
 	return (
 		<div className="RoomActiveHead">
 			<ul>
@@ -29,10 +33,19 @@ const RoomActiveHead = ({getHash}) => {
 				</li>
 			</ul>
 			<h2>
-				{roomsList.filter(room => room.id === getHash)[0].roomName}
+				{chat && chat.id}
 			</h2>
 		</div>
 	)
 }
-
-export default RoomActiveHead;
+const mapStateToProps = (state:any) => {
+  return {
+  	chat: state.chat
+  }
+}
+const mapActionToProps = (dispatch:any) => {
+  return {
+  	getchat: (id) => {dispatch(getchat(id))}
+  }
+}
+export default connect(mapStateToProps, mapActionToProps)(RoomActiveHead);

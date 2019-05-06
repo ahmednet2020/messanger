@@ -1,7 +1,9 @@
 import * as React from 'react'
 import {  Link } from 'react-router-dom'
 
-import Menu from './Menu'
+import Menu from './layout/Menu'
+// css
+import './Setting.scss'
 const Setting = () => {
 	return (
 		<div className="setting">

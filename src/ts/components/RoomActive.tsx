@@ -1,8 +1,10 @@
 import * as React from 'react'
 
-import ChatRoom from '../components/ChatRoom'
-import RoomSetting from '../components/RoomSetting'
-import RoomActiveHead from '../components/RoomActiveHead'
+import ChatRoom from './room/ChatRoom'
+import RoomSetting from './room/RoomSetting'
+import RoomActiveHead from './room/RoomActiveHead'
+
+import './RoomActive.scss'
 const RoomActive = ({getHash}) => {
 	return (
 		<div className="RoomActive">

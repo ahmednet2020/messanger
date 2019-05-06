@@ -1,5 +1,6 @@
 import * as React from 'react'
-
+// css
+import './Search.scss'
 const Search = () => {
 	const [getVal, setVal] = React.useState("")	
 	return (

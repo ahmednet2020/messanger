@@ -1,5 +1,6 @@
 import * as React from 'react'
-
+// css
+import './Menu.scss'
 const Menu = () => {
 	return (
 		<div className="menu">

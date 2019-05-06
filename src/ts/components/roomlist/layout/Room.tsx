@@ -1,6 +1,8 @@
 import * as React from 'react'
- import {  Link } from 'react-router-dom'
-const Room = ({roomName, time, lastMessage = "you can call him now", img, id, getHash}) => {
+import {  Link } from 'react-router-dom'
+// style
+import './Room.scss'
+const Room = ({roomName="no name", lastMessage = "you can call him now", img, id, getHash}) => {
 	return (
 		<li>
 			<Link to={{hash:id}} role="link" tabIndex={0}>
@@ -11,8 +13,8 @@ const Room = ({roomName, time, lastMessage = "you can call him now", img, id, ge
 								{roomName}
 							</span>
 							<span className="room-time">
-								<abbr title={time}>
-									<time dateTime="2019-03-27">{time} </time>
+								<abbr title="2019-03-27">
+									<time dateTime="2019-03-27"> 2019-03-27 </time>
 								</abbr>
 							</span>
 						</div>
