@@ -5,18 +5,14 @@ import RoomActive from '../components/RoomActive'
 
 const Main = (props) => {
 	const hashId = props.location.hash.replace("#", "") || "1";
-	const  [ getHash, setHash ] = React.useState(hashId)
-	React.useEffect(()=> {
-		setHash(hashId)
-	},[hashId])
 	return (
 		<main className="container-fluid">
 			<div className="row">
 				<section className="col-12 col-md-8 col-lg-9">
-						<RoomActive getHash={getHash}/>
+						<RoomActive getHash={hashId}/>
 				</section>
 				<section className="col-12 col-md-4 col-lg-3">
-						<UserList getHash={getHash}/>
+						<UserList getHash={hashId}/>
 				</section>
 			</div>
 		</main>
