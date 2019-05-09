@@ -1,7 +1,10 @@
 import * as React from 'react'
+import { connect } from 'react-redux'
+import { singout } from '../../../actions/auth'
+
 // css
 import './Menu.scss'
-const Menu = () => {
+const Menu = ({singout}) => {
 	return (
 		<div className="menu">
 			<ul role="menu">
@@ -17,8 +20,9 @@ const Menu = () => {
 					</a>
 				</li>
 				<li role="presentation" className="menu-item">
-					<a href="#" target="_blank" role="menuitem">
-						setting
+					<a href="#" target="_blank" role="menuitem"
+						onClick={handleOut.bind(null, singout)}>
+						singout
 					</a>
 				</li>
 			</ul>
@@ -26,4 +30,13 @@ const Menu = () => {
 	)
 }
 
-export default Menu;
+function handleOut(singout,e) {
+	e.preventDefault()
+	singout();
+}
+const mapActionToProps = (dispatch:any) => {
+  return {
+  	singout: () => dispatch(singout()),
+  }
+}
+export default connect(null,mapActionToProps)(Menu);
