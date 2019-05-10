@@ -1,13 +1,16 @@
 export default function auth(state={"err": false}, action) {
 	switch (action.type) {
     case 'SING_IN_SUSS':
+      return {"err": false, "state":"loading"};
+      break;
+    case 'SING_IN':
       return {"err": false,"user":action.user};
       break;
     case 'SING_IN_Err':
       return {"err": true,"message":action.err};
       break;
     case 'SING_UP_SUSS':
-      return {"err": false, "user": null};
+      return {"err": false, ...state};
       break;
     case 'SING_UP_Err':
       return {"err": true,"message":action.err};

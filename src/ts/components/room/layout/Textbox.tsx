@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 const Textbox = () => {
+	const [getMessage, sendMessage] = React.useState("")
 	return (
 		<div className="Textbox">
 		<form className="Textbox-form" onSubmit={handleSubmit}>
@@ -10,10 +11,15 @@ const Textbox = () => {
 					type="text"
 					className="Textbox-input" 
 					aria-label="message box"
-					name="text-message"/>
+					name="text-message"
+					value={getMessage}
+					onChange={e=>{
+						sendMessage(e.target.value);
+					}}
+					/>
 			</label>
 			<label className="submit-label">
-				<button type="submit" name="submit-button" className="submit-button">{getmessage? "send":<i className="fas fa-thumbs-up"></i>}</button>
+				<button type="submit" name="submit-button" className="submit-button">{getMessage? "send":<i className="fas fa-thumbs-up"></i>}</button>
 			</label>
 			</form>
 		</div>

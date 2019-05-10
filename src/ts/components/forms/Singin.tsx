@@ -18,6 +18,10 @@ const Singin = ({auth, singin}) => {
 			</label>
 			{
 				auth.err && <div className="err"> {auth.message } </div>
+
+			}
+			{
+				auth.state && <div className="err"> {auth.state } </div>
 			}
 		</form>
 	)

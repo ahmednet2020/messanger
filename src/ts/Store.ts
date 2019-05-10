@@ -11,10 +11,17 @@ const Store = createStore(
 	applyMiddleware(thunk.withExtraArgument(
 		{firestore, auth}
 		))
-	)
+)
 
-auth.onAuthStateChanged(user => {
-	if(user) return Store.dispatch({"type":"SING_IN_SUSS","user":user});
-	return Store.dispatch({"type":"SING_OUT_SUSS"})
+auth.onAuthStateChanged((user):any => {
+	if(user){
+		firestore.collection("users").doc(user.uid).get()
+		.then((data) => {
+			return Store.dispatch({"type":"SING_IN","user":{uid:user.uid,...data.data()}});
+		})
+		.catch(err => console.log(err.massge))
+	} else {
+	 return Store.dispatch({"type":"SING_OUT_SUSS"})
+	} 
 })
 export default Store

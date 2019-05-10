@@ -6,13 +6,13 @@ import { singout } from '../../../actions/auth'
 // import style file
 import './Menu.scss'
 
-const Menu = ({singout}) => {
+const Menu = ({user, singout}) => {
 	return (
 		<div className="menu">
 			<ul role="menu">
 				<li role="presentation" className="menu-item">
 					<a href="#" target="_blank" role="menuitem">
-						setting
+						{user && user.name? user.name:"no name"}
 					</a>
 				</li>
 				<li role="separator" className="menu-line"></li>
@@ -36,9 +36,15 @@ function handleOut(singout,e) {
 	e.preventDefault()
 	singout();
 }
+// redux functions
+const mapStateToProps = (state) => {
+	return {
+		user:state.auth.user
+	}
+}
 const mapActionToProps = (dispatch:any) => {
   return {
   	singout: () => dispatch(singout()),
   }
 }
-export default connect(null,mapActionToProps)(Menu);
+export default connect(mapStateToProps,mapActionToProps)(Menu);

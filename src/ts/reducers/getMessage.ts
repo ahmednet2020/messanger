@@ -1,8 +1,8 @@
 
 export default function (state = {} , action) {
 	switch (action.type) {
-    case 'CHAT':
-      return action.chat
+    case 'ROOM':
+      return action.message
       break;
     default:
       return state

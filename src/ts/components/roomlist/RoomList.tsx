@@ -3,19 +3,23 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 // import components
 import Room from './layout/Room'
+import User from './layout/User'
 // import actions getRooms
 import getRooms from '../../actions/Rooms'
 
-const RoomList = ({getHash, rooms, getRooms}) => {
+const RoomList = ({getHash, uid,search, rooms, getRooms}) => {
 	React.useEffect(() => {
 		getRooms("")
-	},[rooms])
+	},[])
 	return (
 		<div className="rooms">
 			<ul>
 			{
-				rooms && rooms.map((rooms) => {
-					return <Room {...rooms.data()} key={rooms.id} getHash={getHash}/>
+				search.length > 0? search && search.filter(docs => docs.id !== uid)
+				.map((data) => {
+					return <User {...data.data()} id={data.id} key={data.id} getHash={getHash}/>
+				}) : rooms && rooms.map((rooms) => {
+					return <Room {...rooms.data()} id={rooms.id} key={rooms.id} getHash={getHash}/>
 				})
 			}
 			</ul>
@@ -23,10 +27,12 @@ const RoomList = ({getHash, rooms, getRooms}) => {
 	)
 }
 // redux functions
-const mapStateToProps = (state:any) => {
-  return {
-  	rooms: state.rooms
-  }
+const mapStateToProps = (state) => {
+	return {
+		search:state.search,
+		rooms:state.rooms,
+		uid: state.auth.user.uid
+	}
 }
 const mapActionToProps = (dispatch:any) => {
   return {
