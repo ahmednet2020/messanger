@@ -1,6 +1,9 @@
 import * as React from 'react'
+// import connect for store
 import { connect } from 'react-redux'
+// import actions singup
 import { singup } from '../../actions/auth'
+
 const Singup = ({auth, singup}) => {
 	return (
 		<form className="singup-form" onSubmit={handleSubmit.bind(null, singup)}>
@@ -22,6 +25,8 @@ const Singup = ({auth, singup}) => {
 		</form>
 	)
 }
+
+// for hosting
 function handleSubmit(singup, e) {
 	e.preventDefault()
 	const data = {
@@ -31,8 +36,8 @@ function handleSubmit(singup, e) {
 	}
 	singup(data);
 }
-function mapStateToProps(state)
-{
+// redux functions
+const mapStateToProps = (state) => {
 	return {
 		auth:state.auth
 	}

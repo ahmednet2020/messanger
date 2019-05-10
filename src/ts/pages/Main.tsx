@@ -1,4 +1,5 @@
 import * as React from 'react'
+// import redux 
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -23,8 +24,7 @@ const Main = (props) => {
 		</main>
 	)
 }
-function mapStateToProps(state)
-{
+const mapStateToProps = (state) => {
 	return {
 		auth:state.auth
 	}

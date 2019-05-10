@@ -1,9 +1,9 @@
 import * as React from 'react'
-
+// import components
 import ChatRoom from './room/ChatRoom'
 import RoomSetting from './room/RoomSetting'
 import RoomActiveHead from './room/RoomActiveHead'
-
+// import style file
 import './RoomActive.scss'
 const RoomActive = ({getHash}) => {
 	return (

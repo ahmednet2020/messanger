@@ -1,12 +1,14 @@
 import * as React from 'react'
-import {  Link, Redirect } from 'react-router-dom'
+// import router link
+import {  Link } from 'react-router-dom'
+// import redux connect to use store
 import { connect } from 'react-redux'
-
+// import component
 import Singup from './forms/Singup'
 import Singin from './forms/Singin'
+// import style file
 import './Auth.scss'
-const Auth = ({url, auth, RESTErr}) => {
-	if(auth.user) return ( <Redirect to="/messanger"/> );
+const Auth = ({url, RESTErr}) => {
 	return (
 		<section className="forms">
 			<div className="btn-forms">
@@ -23,15 +25,10 @@ const Auth = ({url, auth, RESTErr}) => {
 		</section>
 	)
 }
-function mapStateToProps(state)
-{
-	return {
-		auth:state.auth
-	}
-}
+
 const mapActionToProps = (dispatch:any) => {
   return {
   	RESTErr: () => dispatch({"type":"REST_Err"}),
   }
 }
-export default connect(mapStateToProps,mapActionToProps)(Auth);
+export default connect(null, mapActionToProps)(Auth);

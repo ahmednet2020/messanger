@@ -1,8 +1,10 @@
 import * as React from 'react'
+// import router link
 import {  Link } from 'react-router-dom'
-// style
+// import style file
 import './Room.scss'
-const Room = ({roomName="no name", lastMessage = "you can call him now", img, id, getHash}) => {
+
+const Room = ({roomName, lastMessage, img, id, getHash}) => {
 	return (
 		<li>
 			<Link to={{hash:id}} role="link" tabIndex={0}>
@@ -10,7 +12,7 @@ const Room = ({roomName="no name", lastMessage = "you can call him now", img, id
 					<div className="info">
 						<div className="room-info">
 							<span className="room-name">
-								{roomName}
+								{roomName? roomName:"no name"}
 							</span>
 							<span className="room-time">
 								<abbr title="2019-03-27">
@@ -19,7 +21,7 @@ const Room = ({roomName="no name", lastMessage = "you can call him now", img, id
 							</span>
 						</div>
 						<div className="last-message">
-							{lastMessage}
+							{lastMessage? lastMessage:"you can call him now"}
 						</div>
 					</div>
 					<div className="img-room">
@@ -31,4 +33,4 @@ const Room = ({roomName="no name", lastMessage = "you can call him now", img, id
 	)
 }
 
-export default React.memo(Room);
+export default Room;

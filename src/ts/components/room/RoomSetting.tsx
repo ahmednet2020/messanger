@@ -1,6 +1,7 @@
 import * as React from 'react'
+// import style file
+import './RoomSetting.scss'
 
-import './RoomSetting.scss';
 const RoomSetting = () => {
 	return (
 		<div>
@@ -34,7 +35,8 @@ const RoomSetting = () => {
 		</div>
 	)
 }
-const handleClick = (e) => {
+
+function handleClick (e){
 	let list = document.querySelector(".setting-list");
 	let btn = list.querySelector(".setting-btn");
 	list.classList.toggle("close")

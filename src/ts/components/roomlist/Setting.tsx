@@ -1,9 +1,11 @@
 import * as React from 'react'
+// import router link
 import {  Link } from 'react-router-dom'
-
+// import components
 import Menu from './layout/Menu'
-// css
+// import style file
 import './Setting.scss'
+
 const Setting = () => {
 	return (
 		<div className="setting">

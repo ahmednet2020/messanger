@@ -1,12 +1,16 @@
 import * as React from 'react'
+// import connect for store
 import { connect } from 'react-redux'
+// import actions getchat
 import getchat from '../../actions/Chat'
-
+// import style file
 import './RoomActiveHead.scss'
 const RoomActiveHead = ({getHash, getchat, chat}) => {
+	// hooks
 	React.useEffect(() => {
 		if(getHash) return getchat(getHash);
 	},[getHash])
+
 	return (
 		<div className="RoomActiveHead">
 			<ul>
@@ -38,6 +42,8 @@ const RoomActiveHead = ({getHash, getchat, chat}) => {
 		</div>
 	)
 }
+
+// redux functions
 const mapStateToProps = (state:any) => {
   return {
   	chat: state.chat

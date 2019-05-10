@@ -1,7 +1,9 @@
 import * as React from 'react'
+// import components
 import Textbox from './layout/Textbox'
-//
+// import style file
 import './ChatRoom.scss'
+
 const ChatRoom = () => {
 	return (
 		<div className="ChatRoom">

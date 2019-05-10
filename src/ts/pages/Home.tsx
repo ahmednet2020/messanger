@@ -1,10 +1,15 @@
 import * as React from 'react'
-
+// import router Redirect
+import { Redirect } from 'react-router-dom'
+// import redux connect to use store
+import { connect } from 'react-redux'
+// import components
 import Auth from '../components/Auth'
 import Textform from '../components/forms/layout/Textform'
 
-const Home = (props) => {
-	const url = props.match.url.replace("/","");
+const Home = ({match, auth}) => {
+	const url = match.url.replace("/","");
+	if(auth.user) return ( <Redirect to="/messanger"/> );
 	return (
 		<main className="container-fluid">
 			<div className="row">
@@ -18,4 +23,10 @@ const Home = (props) => {
 		</main>
 	)
 }
-export default Home;
+
+const mapStateToProps = (state:any) => {
+	return {
+		auth:state.auth
+	}
+}
+export default connect(mapStateToProps)(Home);

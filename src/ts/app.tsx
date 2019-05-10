@@ -1,9 +1,11 @@
+// this file is app component
 import * as React from 'react'
+// import router from react-router-dom
 import {  BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 // redux & store
 import { Provider } from 'react-redux'
 import Store from './Store'
-// pages
+// import component page
 import Main from './pages/Main'
 import Home from './pages/Home'
 import Page404 from './pages/Page404'

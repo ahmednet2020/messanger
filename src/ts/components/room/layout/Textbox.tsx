@@ -1,7 +1,6 @@
 import * as React from 'react'
 
 const Textbox = () => {
-	const [getmessage, setMessage] = React.useState("")
 	return (
 		<div className="Textbox">
 		<form className="Textbox-form" onSubmit={handleSubmit}>
@@ -11,10 +10,7 @@ const Textbox = () => {
 					type="text"
 					className="Textbox-input" 
 					aria-label="message box"
-					name="text-message"
-					value={getmessage} onChange={(event)=> {
-						setMessage(event.target.value)
-			}}/>
+					name="text-message"/>
 			</label>
 			<label className="submit-label">
 				<button type="submit" name="submit-button" className="submit-button">{getmessage? "send":<i className="fas fa-thumbs-up"></i>}</button>
@@ -24,7 +20,7 @@ const Textbox = () => {
 	)
 }
 
-const handleSubmit = (e) => {
+function handleSubmit (e){
 	e.preventDefault()
 	e.persist()
 	let textMessage = e.target["text-message"].value;

@@ -1,4 +1,5 @@
 import * as React from 'react'
+// import components
 import Setting from './roomlist/Setting'
 import Search from './roomlist/Search'
 import RoomList from './roomlist/RoomList'

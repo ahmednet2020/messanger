@@ -1,6 +1,9 @@
 import * as React from 'react'
+// import router link
 import {  Link } from 'react-router-dom'
+// import style file
 import './Textform.scss'
+
 const Textform = () => {
 	return (
 		<section className="text-form">

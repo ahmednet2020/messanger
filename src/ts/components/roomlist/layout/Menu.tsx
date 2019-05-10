@@ -1,9 +1,11 @@
 import * as React from 'react'
+// import connect for store
 import { connect } from 'react-redux'
+// import actions singout
 import { singout } from '../../../actions/auth'
-
-// css
+// import style file
 import './Menu.scss'
+
 const Menu = ({singout}) => {
 	return (
 		<div className="menu">
