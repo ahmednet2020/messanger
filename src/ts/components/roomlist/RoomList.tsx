@@ -9,7 +9,7 @@ import getRooms from '../../actions/Rooms'
 
 const RoomList = ({getHash, uid,search, rooms, getRooms}) => {
 	React.useEffect(() => {
-		getRooms("")
+		getRooms(uid)
 	},[])
 	return (
 		<div className="rooms">

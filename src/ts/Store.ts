@@ -4,12 +4,12 @@ import thunk from 'redux-thunk';
 // import reducers
 import rootReducers from './reducers/rootReducers'
 // import firebase config 
-import { firestore, auth } from './config/fbConfig'
+import { firebase ,firestore, auth } from './config/fbConfig'
 
 const Store = createStore(
 	rootReducers,
 	applyMiddleware(thunk.withExtraArgument(
-		{firestore, auth}
+		{firebase, firestore, auth}
 		))
 )
 

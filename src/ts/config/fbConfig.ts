@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app'
+import * as Firebase from 'firebase/app'
 import 'firebase/auth'
 import 'firebase/firestore'
  // Replace this with your own config details
@@ -10,6 +10,7 @@ const config = {
     projectId: "messanger-ecad1",
     storageBucket: "messanger-ecad1.appspot.com"
 };
-firebase.initializeApp(config);
-export const firestore = firebase.firestore()
-export const auth = firebase.auth()
+Firebase.initializeApp(config);
+export const firestore = Firebase.firestore()
+export const auth = Firebase.auth()
+export const firebase = Firebase
