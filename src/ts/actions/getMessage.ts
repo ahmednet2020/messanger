@@ -5,7 +5,7 @@ export default function (id, uid) {
 			let state = doc.data()
 			if(state)
 			{
-				return dispatch({type:"ROOM", message:state})
+				return dispatch({type:"GET_MESSAGE", message:state})
 			} else {
 				firestore.collection("rooms").add({
 					"users":[uid,id],
@@ -16,15 +16,13 @@ export default function (id, uid) {
 					let CreateIdRoom = Promise.all([
 						firestore.collection("users").doc(id).update({
 							"rooms":firebase.firestore.FieldValue.arrayUnion(doc.id)
-						}).then(e=>{
-							console.log(e)
-						}),
+						}).then(e=> true),
 						firestore.collection("users").doc(uid).update({
 							"rooms":firebase.firestore.FieldValue.arrayUnion(doc.id)
-						}).then(e=>e)
+						}).then(e=>true)
 					]);
 					CreateIdRoom.then(e => {
-						dispatch({type:"ROOM", message:"send a first message"})
+						dispatch({type:"GET_MESSAGE", message:"send a first message"})
 					})
 				})
 			}
