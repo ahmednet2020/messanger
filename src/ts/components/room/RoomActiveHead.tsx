@@ -1,9 +1,7 @@
 import * as React from 'react'
-// import connect for store
-import { connect } from 'react-redux'
 // import style file
 import './RoomActiveHead.scss'
-const RoomActiveHead = ({getHash, getchat}) => {
+const RoomActiveHead = ({name}) => {
 	return (
 		<div className="RoomActiveHead">
 			<ul>
@@ -30,19 +28,10 @@ const RoomActiveHead = ({getHash, getchat}) => {
 				</li>
 			</ul>
 			<h2>
-				id
+				{name && name}
 			</h2>
 		</div>
 	)
 }
 
-// redux functions
-const mapStateToProps = (state:any) => {
-  return {
-  }
-}
-const mapActionToProps = (dispatch:any) => {
-  return {
-  }
-}
-export default connect(mapStateToProps, mapActionToProps)(RoomActiveHead);
+export default RoomActiveHead;

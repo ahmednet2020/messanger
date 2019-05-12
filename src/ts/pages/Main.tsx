@@ -11,10 +11,11 @@ import RoomActive from '../components/RoomActive'
 import getMessage from '../actions/getMessage'
 
 const Main = ({location, auth, getMessage}) => {
-	const hashId = location.hash.replace("#", "") || "1";
+	//console.log(location.state);
+	const hashId = location.hash.replace("#", "") || false;
 	if(!auth.user) return ( <Redirect to="/"/> );
 	React.useEffect(()=>{
-		if(hashId !== "1")
+		if(hashId)
 		{
 			getMessage(hashId, auth.user.uid)
 		}
@@ -23,7 +24,7 @@ const Main = ({location, auth, getMessage}) => {
 		<main className="container-fluid">
 			<div className="row">
 				<section className="col-12 col-md-8 col-lg-9">
-						<RoomActive getHash={hashId}/>
+						<RoomActive />
 				</section>
 				<section className="col-12 col-md-4 col-lg-3">
 						<UserList getHash={hashId}/>

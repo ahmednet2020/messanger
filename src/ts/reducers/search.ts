@@ -1,8 +1,8 @@
 
-export default function (state = [] , action) {
+export default function (state = {val:"", users:[]} , action) {
 	switch (action.type) {
     case 'SEARCH':
-      return action.users
+      return {...action}
       break;
     default:
       return state

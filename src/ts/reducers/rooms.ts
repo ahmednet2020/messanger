@@ -4,6 +4,9 @@ export default function (state = [] , action) {
     case 'ROOM_LIST':
       return [...action.rooms]
       break;
+	 case 'NO_LIST':
+	  return []
+	  break;
     default:
       return state
       break;

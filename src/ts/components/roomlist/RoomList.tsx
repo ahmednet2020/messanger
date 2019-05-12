@@ -9,17 +9,17 @@ import getRooms from '../../actions/Rooms'
 
 const RoomList = ({getHash, uid,search, rooms, getRooms}) => {
 	React.useEffect(() => {
-		getRooms(uid)
-	},[])
+		if(search.val === "") getRooms(uid);
+	},[search])
 	return (
 		<div className="rooms">
 			<ul>
 			{
-				search.length > 0? search && search.filter(docs => docs.id !== uid)
+				search.users.length? search.users && search.users.filter(docs => docs.id !== uid)
 				.map((data) => {
-					return <User {...data.data()} id={data.id} key={data.id} getHash={getHash}/>
+					return <User {...data} key={data.id} getHash={getHash}/>
 				}) : rooms && rooms.map((rooms) => {
-					return <Room {...rooms.data()} id={rooms.id} key={rooms.id} getHash={getHash}/>
+					return <Room {...rooms} key={rooms.id} getHash={getHash}/>
 				})
 			}
 			</ul>

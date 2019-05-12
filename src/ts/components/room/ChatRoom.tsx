@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { connect } from 'react-redux'
 // import components
 import Textbox from './layout/Textbox'
 // import style file
@@ -22,9 +21,4 @@ const ChatRoom = ({message}) => {
 		</div>
 	)
 }
-const mapStateToProps = (state) => {
-	return {
-		message:state.getMessage
-	}
-}
-export default connect(mapStateToProps)(ChatRoom);
+export default ChatRoom;

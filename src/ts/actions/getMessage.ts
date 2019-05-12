@@ -1,22 +1,14 @@
 export default function (id, uid) {
 	return (dispatch, getState, { firebase, firestore, auth }) => {
-		firestore.collection("rooms").get()
+		firestore.collection("rooms").doc(id).get()
 		.then((doc) => {
-			let data = doc.docs.filter(data => {
-				if(data.data().users.length >= 3) return false;
-					if(data.data().users.indexOf(id) !== -1 && data.data().users.indexOf(uid) !== -1)
-					{
-						return true;
-					} else {
-						return false
-					}
-			});
-			if(data.length)
+			let state = doc.data()
+			if(state)
 			{
-				console.log(data)
-				//return dispatch({type:"ROOM", message:data})
+				return dispatch({type:"ROOM", message:state})
 			} else {
 				firestore.collection("rooms").add({
+					"users":[uid,id],
 					"messages":"send a first message",
 					"img":"https://cdn.pixabay.com/photo/2017/09/04/20/47/child-2715429_960_720.jpg",
 					ceateAt:new Date()
@@ -24,13 +16,15 @@ export default function (id, uid) {
 					let CreateIdRoom = Promise.all([
 						firestore.collection("users").doc(id).update({
 							"rooms":firebase.firestore.FieldValue.arrayUnion(doc.id)
-						}).then(e=>e),
+						}).then(e=>{
+							console.log(e)
+						}),
 						firestore.collection("users").doc(uid).update({
 							"rooms":firebase.firestore.FieldValue.arrayUnion(doc.id)
 						}).then(e=>e)
 					]);
 					CreateIdRoom.then(e => {
-						console.log(e)
+						dispatch({type:"ROOM", message:"send a first message"})
 					})
 				})
 			}
